@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #2A364F transparent;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #2A364F;
+    border-radius: 9999px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #3B4D70;
+  }
+}
+
+/* Custom glow and backdrop effects */
+.glow-subtle {
+  box-shadow: 0 0 25px -5px rgba(20, 184, 166, 0.12);
+}
+
+.glow-voice {
+  box-shadow: 0 0 35px 2px rgba(20, 184, 166, 0.35);
+}
+
+/* Wave animation for voice listener */
+@keyframes soundwave {
+  0% { transform: scaleY(0.3); }
+  50% { transform: scaleY(1); }
+  100% { transform: scaleY(0.3); }
+}
+
+.animate-wave-1 { animation: soundwave 0.8s ease-in-out infinite; }
+.animate-wave-2 { animation: soundwave 1.1s ease-in-out infinite 0.2s; }
+.animate-wave-3 { animation: soundwave 0.9s ease-in-out infinite 0.4s; }
+.animate-wave-4 { animation: soundwave 1.3s ease-in-out infinite 0.1s; }
+.animate-wave-5 { animation: soundwave 0.7s ease-in-out infinite 0.3s; }
