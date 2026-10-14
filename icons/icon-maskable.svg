@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <rect width="512" height="512" fill="#0F172A"/>
+  <!-- Safe Zone Maskable Graphic -->
+  <circle cx="256" cy="256" r="200" fill="#1E293B" stroke="#3B82F6" stroke-width="6"/>
+  <path d="M160 350V210L256 140L352 210V350H160Z" fill="#2563EB"/>
+  <rect x="190" y="230" width="30" height="32" rx="4" fill="#93C5FD"/>
+  <rect x="292" y="230" width="30" height="32" rx="4" fill="#93C5FD"/>
+  <rect x="190" y="280" width="30" height="32" rx="4" fill="#93C5FD"/>
+  <rect x="292" y="280" width="30" height="32" rx="4" fill="#93C5FD"/>
+  <path d="M236 350V300H276V350H236Z" fill="#0F172A"/>
+</svg>
