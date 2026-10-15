@@ -1,1 +1,0 @@
-(globalThis.TURBOPACK||(globalThis.TURBOPACK=[])).push(["object"==typeof document?document.currentScript:void 0,43771,t=>{"use strict";var i=t.i(4298),e=t.i(84663);t.s(["default",0,function(){return(0,i.jsx)(e.e,{tab:"finans",sub:"invoices"})}])}]);
