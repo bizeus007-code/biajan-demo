@@ -3,7 +3,7 @@
  * App Shell Caching & Network-First Dynamic Fetching
  */
 
-const CACHE_NAME = 'bisite-v39.0.0';
+const CACHE_NAME = 'bisite-v42.0.0';
 const OFFLINE_URL = '/offline.html';
 
 const APP_SHELL_ASSETS = [
