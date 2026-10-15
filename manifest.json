@@ -1,7 +1,7 @@
 {
   "name": "BİAJAN Yönetim — Apartman ve Site Yönetim Platformu",
   "short_name": "BİAJAN",
-  "description": "BİAJAN Yönetim — Profesyonel Apartman ve Site Yönetim Platformu (KMK & TMK Uyumlu)",
+  "description": "Apartman ve site yönetimleri için kolay aidat takibi, gelir-gider yönetimi, banka entegrasyonu, WhatsApp/SMS bilgilendirme ve mobil sakin uygulaması.",
   "start_url": "/",
   "id": "/",
   "display": "standalone",

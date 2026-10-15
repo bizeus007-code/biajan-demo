@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://biajan.com/sitemap.xml

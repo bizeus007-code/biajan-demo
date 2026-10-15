@@ -1,0 +1,1 @@
+(globalThis.TURBOPACK||(globalThis.TURBOPACK=[])).push(["object"==typeof document?document.currentScript:void 0,35519,s=>{"use strict";var t=s.i(4298),e=s.i(84663);s.s(["default",0,function(){return(0,t.jsx)(e.e,{tab:"isler",sub:"issues"})}])}]);
