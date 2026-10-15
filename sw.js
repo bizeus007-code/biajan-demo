@@ -3,7 +3,7 @@
  * App Shell Caching & Network-First Dynamic Fetching
  */
 
-const CACHE_NAME = 'bisite-v1.0.0';
+const CACHE_NAME = 'bisite-v39.0.0';
 const OFFLINE_URL = '/offline.html';
 
 const APP_SHELL_ASSETS = [
@@ -66,7 +66,31 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // Stale-while-revalidate for static assets & pages
+  // Network-first for HTML document navigation so updates on biajan.com are always immediate
+  if (request.mode === 'navigate') {
+    event.respondWith(
+      fetch(request)
+        .then((networkResponse) => {
+          if (networkResponse && networkResponse.status === 200) {
+            const responseClone = networkResponse.clone();
+            caches.open(CACHE_NAME).then((cache) => {
+              cache.put(request, responseClone);
+            });
+          }
+          return networkResponse;
+        })
+        .catch(async () => {
+          return (
+            (await caches.match(request)) ||
+            (await caches.match(OFFLINE_URL)) ||
+            (await caches.match('/offline.html'))
+          );
+        })
+    );
+    return;
+  }
+
+  // Stale-while-revalidate for static assets
   event.respondWith(
     caches.match(request).then((cachedResponse) => {
       const fetchPromise = fetch(request)
@@ -79,17 +103,7 @@ self.addEventListener('fetch', (event) => {
           }
           return networkResponse;
         })
-        .catch(async () => {
-          // Fallback if offline
-          if (request.mode === 'navigate') {
-            return (
-              (await caches.match(OFFLINE_URL)) ||
-              (await caches.match('/offline.html')) ||
-              cachedResponse
-            );
-          }
-          return cachedResponse;
-        });
+        .catch(() => cachedResponse);
 
       return cachedResponse || fetchPromise;
     })
